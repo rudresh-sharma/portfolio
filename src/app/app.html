@@ -1,0 +1,90 @@
+<!-- Full-Screen Interactive Loading Overlay -->
+@if (isLoading()) {
+  <div class="fixed inset-0 z-[9999] bg-[#09090e] flex flex-col items-center justify-center text-white select-none transition-all duration-500">
+    <div class="relative flex flex-col items-center max-w-sm px-6 text-center">
+      <!-- Animated Spinning Outer Bracket -->
+      <div class="w-16 h-16 rounded-full border-4 border-accent-cyan/10 border-t-accent-cyan animate-spin mb-6"></div>
+      
+      <!-- Embedded Microservice Emblem -->
+      <div class="absolute top-[22px] font-black text-xs text-accent-indigo font-mono">JVM</div>
+      
+      <!-- Loading Logo Text -->
+      <h2 class="text-lg font-bold font-display tracking-tight text-white mb-2">
+        Rudresh Sharma
+      </h2>
+      <p class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase">
+        Spring & Angular 21 Architecture
+      </p>
+
+      <!-- Central Progress Indicator Line -->
+      <div class="w-48 h-1 bg-white/5 rounded-full mt-5 overflow-hidden">
+        <div class="h-full bg-gradient-to-r from-accent-indigo via-accent-blue to-accent-cyan rounded-full animate-pulse w-full"></div>
+      </div>
+
+      <!-- Real-time Diagnostic State labels -->
+      <p class="text-[10px] font-mono text-neutral-400 mt-4 h-4 flex items-center justify-center">
+        {{ loadingStage() }}
+      </p>
+    </div>
+  </div>
+}
+
+<!-- Custom Desktop Interactive Cursor (Only rendered when pointer: fine is supported) -->
+@if (isBrowser && hasFinePointer() && !isLoading()) {
+  <div 
+    class="custom-cursor hidden md:block" 
+    [style.left.px]="cursorX()" 
+    [style.top.px]="cursorY()"
+    [class.custom-cursor-active]="cursorActive()"
+  ></div>
+  <div 
+    class="custom-cursor-dot hidden md:block" 
+    [style.left.px]="cursorX()" 
+    [style.top.px]="cursorY()"
+  ></div>
+}
+
+<!-- Floating Floating Particles Decor (Ambient theme background details) -->
+<div class="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+  <div class="absolute -top-40 -left-40 w-96 h-96 rounded-full filter blur-[150px] opacity-10 dark:opacity-20 dark:bg-accent-indigo bg-accent-indigo/20"></div>
+  <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full filter blur-[130px] opacity-10 dark:opacity-20 dark:bg-accent-cyan bg-accent-cyan/20"></div>
+</div>
+
+<!-- Main Application Layout Content -->
+<div class="min-h-screen flex flex-col justify-between relative z-10">
+  <!-- Stripe-Morphic Navbar -->
+  <app-navbar></app-navbar>
+
+  <!-- Linear Scroll Container (Home, About, Skills, Projects, Timeline, Achievements, Certifications, Profiles, Contact) -->
+  <main class="flex-1 w-full">
+    <!-- Hero Header -->
+    <app-hero></app-hero>
+
+    <!-- Detailed Biography -->
+    <app-about></app-about>
+
+    <!-- Grouped Skill tagged chips -->
+    <app-skills></app-skills>
+
+    <!-- Project Cards -->
+    <app-projects></app-projects>
+
+    <!-- Experience Chronology -->
+    <app-timeline></app-timeline>
+
+    <!-- Achievements & Awards -->
+    <app-achievements></app-achievements>
+
+    <!-- Professional Credentials -->
+    <app-certification></app-certification>
+
+    <!-- Developer Coding Profiles -->
+    <app-coding-profiles></app-coding-profiles>
+
+    <!-- Feedback Contact Section -->
+    <app-contact></app-contact>
+  </main>
+
+  <!-- Footer links -->
+  <app-footer></app-footer>
+</div>
