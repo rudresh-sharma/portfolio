@@ -12,8 +12,8 @@ export class Hero implements OnInit, OnDestroy {
 
   private texts = [
     'Rudresh Sharma',
-    'Java Developer',
-    'Backend Developer',
+    'Java Backend Developer',
+
     'Spring Boot Developer',
     'AI Developer'
   ];
