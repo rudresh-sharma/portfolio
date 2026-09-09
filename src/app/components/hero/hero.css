@@ -1,0 +1,22 @@
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-left: 5px;
+  vertical-align: -0.05em;
+  border-radius: 2px;
+  background: currentColor;
+  animation: typingCursor 0.8s ease-in-out infinite;
+}
+
+@keyframes typingCursor {
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
