@@ -1,9 +1,8 @@
 <nav
   class="fixed left-0 right-0 top-4 z-50 px-3 sm:px-6
          transition-transform duration-300 ease-out"
-  [class.-translate-y-[calc(100%+1rem)]]="!isNavVisible"
+  [class.nav-hidden]="!isNavVisible"
 >
-
   <!-- ========================================================= -->
   <!-- MAIN NAVBAR -->
   <!-- ========================================================= -->
@@ -38,7 +37,7 @@
         Rudresh Sharma
       </p>
 
-      <!-- Animated curved underline -->
+      <!-- Curved underline -->
       <span
         class="absolute -bottom-1 left-1/2
                h-[3px] w-0
@@ -64,158 +63,188 @@
              md:col-start-2 md:flex"
     >
 
+      <!-- ===================================================== -->
       <!-- HOME -->
+      <!-- ===================================================== -->
+
       <a
         href="#home"
         class="group relative rounded-full px-4 py-2
-               text-sm font-medium text-zinc-500
-               transition-all duration-300
-               hover:bg-white
-               hover:text-zinc-900
-               hover:shadow-sm"
+               text-sm transition-all duration-300
+               hover:bg-white hover:shadow-sm"
+        [class.text-zinc-900]="activeSection === 'home'"
+        [class.font-semibold]="activeSection === 'home'"
+        [class.text-zinc-500]="activeSection !== 'home'"
+        [class.font-medium]="activeSection !== 'home'"
       >
         Home
 
         <span
           class="absolute bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-300 ease-out
-                 group-hover:w-6
-                 group-hover:opacity-100"
+                 transition-all duration-300 ease-out"
+          [class.w-6]="activeSection === 'home'"
+          [class.w-0]="activeSection !== 'home'"
+          [class.opacity-100]="activeSection === 'home'"
+          [class.opacity-0]="activeSection !== 'home'"
         ></span>
       </a>
 
 
+      <!-- ===================================================== -->
       <!-- ABOUT -->
+      <!-- ===================================================== -->
+
       <a
         href="#about"
         class="group relative rounded-full px-4 py-2
-               text-sm font-medium text-zinc-500
-               transition-all duration-300
-               hover:bg-white
-               hover:text-zinc-900
-               hover:shadow-sm"
+               text-sm transition-all duration-300
+               hover:bg-white hover:shadow-sm"
+        [class.text-zinc-900]="activeSection === 'about'"
+        [class.font-semibold]="activeSection === 'about'"
+        [class.text-zinc-500]="activeSection !== 'about'"
+        [class.font-medium]="activeSection !== 'about'"
       >
         About
 
         <span
           class="absolute bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-300 ease-out
-                 group-hover:w-6
-                 group-hover:opacity-100"
+                 transition-all duration-300 ease-out"
+          [class.w-6]="activeSection === 'about'"
+          [class.w-0]="activeSection !== 'about'"
+          [class.opacity-100]="activeSection === 'about'"
+          [class.opacity-0]="activeSection !== 'about'"
         ></span>
       </a>
 
 
+      <!-- ===================================================== -->
       <!-- SKILLS -->
+      <!-- ===================================================== -->
+
       <a
         href="#skills"
         class="group relative rounded-full px-4 py-2
-               text-sm font-medium text-zinc-500
-               transition-all duration-300
-               hover:bg-white
-               hover:text-zinc-900
-               hover:shadow-sm"
+               text-sm transition-all duration-300
+               hover:bg-white hover:shadow-sm"
+        [class.text-zinc-900]="activeSection === 'skills'"
+        [class.font-semibold]="activeSection === 'skills'"
+        [class.text-zinc-500]="activeSection !== 'skills'"
+        [class.font-medium]="activeSection !== 'skills'"
       >
         Skills
 
         <span
           class="absolute bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-300 ease-out
-                 group-hover:w-6
-                 group-hover:opacity-100"
+                 transition-all duration-300 ease-out"
+          [class.w-6]="activeSection === 'skills'"
+          [class.w-0]="activeSection !== 'skills'"
+          [class.opacity-100]="activeSection === 'skills'"
+          [class.opacity-0]="activeSection !== 'skills'"
         ></span>
       </a>
 
 
+      <!-- ===================================================== -->
       <!-- PROJECTS -->
+      <!-- ===================================================== -->
+
       <a
         href="#projects"
         class="group relative rounded-full px-4 py-2
-               text-sm font-medium text-zinc-500
-               transition-all duration-300
-               hover:bg-white
-               hover:text-zinc-900
-               hover:shadow-sm"
+               text-sm transition-all duration-300
+               hover:bg-white hover:shadow-sm"
+        [class.text-zinc-900]="activeSection === 'projects'"
+        [class.font-semibold]="activeSection === 'projects'"
+        [class.text-zinc-500]="activeSection !== 'projects'"
+        [class.font-medium]="activeSection !== 'projects'"
       >
         Projects
 
         <span
           class="absolute bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-300 ease-out
-                 group-hover:w-6
-                 group-hover:opacity-100"
+                 transition-all duration-300 ease-out"
+          [class.w-6]="activeSection === 'projects'"
+          [class.w-0]="activeSection !== 'projects'"
+          [class.opacity-100]="activeSection === 'projects'"
+          [class.opacity-0]="activeSection !== 'projects'"
         ></span>
       </a>
 
 
+      <!-- ===================================================== -->
       <!-- EXPERIENCE -->
+      <!-- ===================================================== -->
+
       <a
         href="#experience"
         class="group relative rounded-full px-4 py-2
-               text-sm font-medium text-zinc-500
-               transition-all duration-300
-               hover:bg-white
-               hover:text-zinc-900
-               hover:shadow-sm"
+               text-sm transition-all duration-300
+               hover:bg-white hover:shadow-sm"
+        [class.text-zinc-900]="activeSection === 'experience'"
+        [class.font-semibold]="activeSection === 'experience'"
+        [class.text-zinc-500]="activeSection !== 'experience'"
+        [class.font-medium]="activeSection !== 'experience'"
       >
         Experience
 
         <span
           class="absolute bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-300 ease-out
-                 group-hover:w-6
-                 group-hover:opacity-100"
+                 transition-all duration-300 ease-out"
+          [class.w-6]="activeSection === 'experience'"
+          [class.w-0]="activeSection !== 'experience'"
+          [class.opacity-100]="activeSection === 'experience'"
+          [class.opacity-0]="activeSection !== 'experience'"
         ></span>
       </a>
 
 
+      <!-- ===================================================== -->
       <!-- CONTACT -->
+      <!-- ===================================================== -->
+
       <a
         href="#contact"
         class="group relative rounded-full px-4 py-2
-               text-sm font-medium text-zinc-500
-               transition-all duration-300
-               hover:bg-white
-               hover:text-zinc-900
-               hover:shadow-sm"
+               text-sm transition-all duration-300
+               hover:bg-white hover:shadow-sm"
+        [class.text-zinc-900]="activeSection === 'contact'"
+        [class.font-semibold]="activeSection === 'contact'"
+        [class.text-zinc-500]="activeSection !== 'contact'"
+        [class.font-medium]="activeSection !== 'contact'"
       >
         Contact
 
         <span
           class="absolute bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-300 ease-out
-                 group-hover:w-6
-                 group-hover:opacity-100"
+                 transition-all duration-300 ease-out"
+          [class.w-6]="activeSection === 'contact'"
+          [class.w-0]="activeSection !== 'contact'"
+          [class.opacity-100]="activeSection === 'contact'"
+          [class.opacity-0]="activeSection !== 'contact'"
         ></span>
       </a>
 
@@ -312,7 +341,6 @@
       >
         Rudresh Sharma
 
-        <!-- Animated curved underline -->
         <span
           class="absolute -bottom-1 left-1/2
                  h-[3px] w-0
@@ -380,23 +408,26 @@
         href="#home"
         (click)="closeMenu()"
         class="group relative inline-block
-               py-2 text-2xl font-medium
-               text-zinc-500
-               transition-colors duration-300
-               hover:text-blue-600"
+               py-2 text-2xl
+               transition-all duration-300"
+        [class.text-zinc-900]="activeSection === 'home'"
+        [class.font-semibold]="activeSection === 'home'"
+        [class.text-zinc-500]="activeSection !== 'home'"
+        [class.font-medium]="activeSection !== 'home'"
       >
         Home
 
         <span
           class="absolute -bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-500 ease-out
-                 group-hover:w-full
-                 group-hover:opacity-100"
+                 transition-all duration-500 ease-out"
+          [class.w-full]="activeSection === 'home'"
+          [class.w-0]="activeSection !== 'home'"
+          [class.opacity-100]="activeSection === 'home'"
+          [class.opacity-0]="activeSection !== 'home'"
         ></span>
       </a>
 
@@ -406,23 +437,26 @@
         href="#about"
         (click)="closeMenu()"
         class="group relative inline-block
-               py-2 text-2xl font-medium
-               text-zinc-500
-               transition-colors duration-300
-               hover:text-blue-600"
+               py-2 text-2xl
+               transition-all duration-300"
+        [class.text-zinc-900]="activeSection === 'about'"
+        [class.font-semibold]="activeSection === 'about'"
+        [class.text-zinc-500]="activeSection !== 'about'"
+        [class.font-medium]="activeSection !== 'about'"
       >
         About
 
         <span
           class="absolute -bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-500 ease-out
-                 group-hover:w-full
-                 group-hover:opacity-100"
+                 transition-all duration-500 ease-out"
+          [class.w-full]="activeSection === 'about'"
+          [class.w-0]="activeSection !== 'about'"
+          [class.opacity-100]="activeSection === 'about'"
+          [class.opacity-0]="activeSection !== 'about'"
         ></span>
       </a>
 
@@ -432,23 +466,26 @@
         href="#skills"
         (click)="closeMenu()"
         class="group relative inline-block
-               py-2 text-2xl font-medium
-               text-zinc-500
-               transition-colors duration-300
-               hover:text-blue-600"
+               py-2 text-2xl
+               transition-all duration-300"
+        [class.text-zinc-900]="activeSection === 'skills'"
+        [class.font-semibold]="activeSection === 'skills'"
+        [class.text-zinc-500]="activeSection !== 'skills'"
+        [class.font-medium]="activeSection !== 'skills'"
       >
         Skills
 
         <span
           class="absolute -bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-500 ease-out
-                 group-hover:w-full
-                 group-hover:opacity-100"
+                 transition-all duration-500 ease-out"
+          [class.w-full]="activeSection === 'skills'"
+          [class.w-0]="activeSection !== 'skills'"
+          [class.opacity-100]="activeSection === 'skills'"
+          [class.opacity-0]="activeSection !== 'skills'"
         ></span>
       </a>
 
@@ -458,23 +495,26 @@
         href="#projects"
         (click)="closeMenu()"
         class="group relative inline-block
-               py-2 text-2xl font-medium
-               text-zinc-500
-               transition-colors duration-300
-               hover:text-blue-600"
+               py-2 text-2xl
+               transition-all duration-300"
+        [class.text-zinc-900]="activeSection === 'projects'"
+        [class.font-semibold]="activeSection === 'projects'"
+        [class.text-zinc-500]="activeSection !== 'projects'"
+        [class.font-medium]="activeSection !== 'projects'"
       >
         Projects
 
         <span
           class="absolute -bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-500 ease-out
-                 group-hover:w-full
-                 group-hover:opacity-100"
+                 transition-all duration-500 ease-out"
+          [class.w-full]="activeSection === 'projects'"
+          [class.w-0]="activeSection !== 'projects'"
+          [class.opacity-100]="activeSection === 'projects'"
+          [class.opacity-0]="activeSection !== 'projects'"
         ></span>
       </a>
 
@@ -484,23 +524,26 @@
         href="#experience"
         (click)="closeMenu()"
         class="group relative inline-block
-               py-2 text-2xl font-medium
-               text-zinc-500
-               transition-colors duration-300
-               hover:text-blue-600"
+               py-2 text-2xl
+               transition-all duration-300"
+        [class.text-zinc-900]="activeSection === 'experience'"
+        [class.font-semibold]="activeSection === 'experience'"
+        [class.text-zinc-500]="activeSection !== 'experience'"
+        [class.font-medium]="activeSection !== 'experience'"
       >
         Experience
 
         <span
           class="absolute -bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-500 ease-out
-                 group-hover:w-full
-                 group-hover:opacity-100"
+                 transition-all duration-500 ease-out"
+          [class.w-full]="activeSection === 'experience'"
+          [class.w-0]="activeSection !== 'experience'"
+          [class.opacity-100]="activeSection === 'experience'"
+          [class.opacity-0]="activeSection !== 'experience'"
         ></span>
       </a>
 
@@ -510,23 +553,26 @@
         href="#contact"
         (click)="closeMenu()"
         class="group relative inline-block
-               py-2 text-2xl font-medium
-               text-zinc-500
-               transition-colors duration-300
-               hover:text-blue-600"
+               py-2 text-2xl
+               transition-all duration-300"
+        [class.text-zinc-900]="activeSection === 'contact'"
+        [class.font-semibold]="activeSection === 'contact'"
+        [class.text-zinc-500]="activeSection !== 'contact'"
+        [class.font-medium]="activeSection !== 'contact'"
       >
         Contact
 
         <span
           class="absolute -bottom-1 left-1/2
-                 h-[3px] w-0
+                 h-[3px]
                  -translate-x-1/2
                  rounded-[100%]
                  bg-blue-600
-                 opacity-0
-                 transition-all duration-500 ease-out
-                 group-hover:w-full
-                 group-hover:opacity-100"
+                 transition-all duration-500 ease-out"
+          [class.w-full]="activeSection === 'contact'"
+          [class.w-0]="activeSection !== 'contact'"
+          [class.opacity-100]="activeSection === 'contact'"
+          [class.opacity-0]="activeSection !== 'contact'"
         ></span>
       </a>
 

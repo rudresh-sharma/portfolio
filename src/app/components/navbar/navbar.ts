@@ -55,4 +55,50 @@ onWindowScroll(): void {
 
   this.lastScrollY = currentScrollY;
 }
+
+
+activeSection = 'home';
+
+private sectionIds = [
+  'home',
+  'about',
+  'skills',
+  'projects',
+  'experience',
+  'contact'
+];
+
+@HostListener('window:scroll', [])
+onScroll(): void {
+  // Existing navbar hide/show logic
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY <= 10) {
+    this.isNavVisible = true;
+  } else if (!this.isMenuOpen) {
+    if (currentScrollY > this.lastScrollY) {
+      this.isNavVisible = false;
+    } else if (currentScrollY < this.lastScrollY) {
+      this.isNavVisible = true;
+    }
+  }
+
+  this.lastScrollY = currentScrollY;
+
+  // Find active section
+  const scrollPosition = currentScrollY + 150;
+
+  for (const id of this.sectionIds) {
+    const section = document.getElementById(id);
+
+    if (
+      section &&
+      section.offsetTop <= scrollPosition &&
+      section.offsetTop + section.offsetHeight > scrollPosition
+    ) {
+      this.activeSection = id;
+      break;
+    }
+  }
+}
 }
